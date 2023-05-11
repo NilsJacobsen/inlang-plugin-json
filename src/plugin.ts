@@ -140,7 +140,7 @@ async function writeResources(
 
     if(pathAfterLanguageIsDirectory){
       //deserialize the file names
-      const result = splitMessagesByPrefix(resource.body)
+      const result = splitMessagesByPrefix(structuredClone(resource.body))
       for(const prefix of result.prefixes){
           // console.log(resourcePath.replace("*", prefix))
           // console.log(result.messages[prefix])
